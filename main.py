@@ -36,12 +36,8 @@ class Frame(MyFrame):
         self.label_answer.SetLabelText('Ответ: y =')
 
 
-def main():
+if __name__ == '__main__':
     app = wx.App()
     frame = Frame(None)
     frame.Show()
     app.MainLoop()
-
-
-if __name__ == '__main__':
-    main()
