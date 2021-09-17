@@ -18,7 +18,7 @@ class MyFrame(wx.Frame):
 
         Form = wx.BoxSizer(wx.VERTICAL)
 
-        Variables = wx.GridBagSizer(0, 0)
+        Variables = wx.GridBagSizer()
         Variables.SetFlexibleDirection(wx.BOTH)
         Variables.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED)
 
@@ -116,7 +116,7 @@ class MyFrame(wx.Frame):
 
         Form.Add(Variables, 1, wx.ALL, 5)
 
-        Buttons = wx.BoxSizer(wx.HORIZONTAL)
+        Buttons = wx.BoxSizer()
 
         self.Solve = wx.Button(self, wx.ID_ANY, u"Решить", wx.DefaultPosition, wx.DefaultSize, 0)
         self.Solve.SetFont(wx.Font(12, wx.FONTFAMILY_MODERN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False,
@@ -149,7 +149,7 @@ class MyFrame(wx.Frame):
         self.SetSizer(Form)
         self.Layout()
 
-        self.Centre(wx.BOTH)
+        self.Centre()
 
         # Connect Events
         self.Solve.Bind(wx.EVT_BUTTON, self.solve)
@@ -159,7 +159,7 @@ class MyFrame(wx.Frame):
     def __del__(self):
         pass
 
-# Virtual event handlers, override them in your derived class
+    # Virtual event handlers, override them in your derived class
     def solve(self, event):
         event.Skip()
 
